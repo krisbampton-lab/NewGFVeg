@@ -39,8 +39,6 @@
       text-decoration: underline;
     }
 
-    /* Layout */
-
     .page-shell {
       max-width: 1000px;
       margin: 0 auto;
@@ -84,8 +82,6 @@
       border: 1px solid #b3d8b4;
     }
 
-    /* Top nav */
-
     nav.top-nav {
       margin-top: 1.25rem;
       padding: 0.55rem 0.75rem;
@@ -118,8 +114,6 @@
       background: #eaf6e7;
     }
 
-    /* Sections */
-
     main {
       margin-top: 1.25rem;
     }
@@ -138,8 +132,6 @@
       color: var(--accent-dark);
       font-size: 1.15rem;
     }
-
-    /* Collapsible Sections (no JS, just <details>) */
 
     .recipe-section {
       margin-bottom: 1.75rem;
@@ -190,8 +182,6 @@
       background: var(--bg-card);
     }
 
-    /* Recipe index inside each section */
-
     .section-index {
       margin: 0 0 0.75rem;
       padding: 0.6rem 0.75rem;
@@ -215,8 +205,6 @@
     .section-index li {
       margin: 0.15rem 0;
     }
-
-    /* Recipe cards */
 
     .recipe-card {
       margin-top: 1rem;
@@ -264,8 +252,6 @@
       color: var(--accent-dark);
       font-weight: 500;
     }
-
-    /* Ingredients + method layout */
 
     .recipe-columns {
       margin-top: 0.75rem;
@@ -322,8 +308,6 @@
       margin-top: 0.25rem;
     }
 
-    /* Nutrition / usage details */
-
     .nutrition {
       margin-top: 0.7rem;
       border-radius: 0.6rem;
@@ -360,8 +344,6 @@
       padding-left: 1rem;
     }
 
-    /* Footer */
-
     footer {
       margin-top: 2.25rem;
       padding-top: 1.25rem;
@@ -395,6 +377,7 @@
   </style>
 </head>
 <body>
+  <div id="top"></div>
   <div class="page-shell">
 
     <header>
@@ -404,20 +387,19 @@
 
       <div class="badges-row">
         <span class="badge-pill">100% Gluten-Free</span>
-        <span class="badge-pill">Vegetarian & Easily Vegan</span>
+        <span class="badge-pill">Vegetarian &amp; Easily Vegan</span>
         <span class="badge-pill">Meal-Prep Friendly</span>
       </div>
 
       <nav class="top-nav">
         <span class="label">Jump to:</span>
         <a href="#index">Index</a>
-        <a href="#bowls">Bowls, Salads & Grain Mains</a>
-        <!-- Add more as you grow: soups, pastas, mains, etc. -->
+        <a href="#bowls">Bowls, Salads &amp; Grain Mains</a>
+        <!-- Add more section links as you build them -->
       </nav>
     </header>
 
     <main>
-      <!-- INTRO / HOW TO USE -->
       <section id="index" class="intro-block">
         <h2>How this cookbook works</h2>
         <p>
@@ -431,15 +413,15 @@
           <li><strong>Quick overview</strong> — serves, time, and what kind of meal it is.</li>
           <li><strong>Ingredients split into logical blocks</strong> — base, toppings, dressings, etc.</li>
           <li><strong>Clear method steps</strong> — written so you can actually cook from your phone or tablet.</li>
-          <li><strong>Nutrition & usage notes</strong> — macro-ish snapshot and how to use it for meal prep.</li>
+          <li><strong>Nutrition &amp; usage notes</strong> — macro-ish snapshot and how to use it for meal prep.</li>
         </ul>
       </section>
 
-      <!-- BOWLS SECTION (EXAMPLE) -->
+      <!-- ===================== BOWLS SECTION ===================== -->
       <details id="bowls" class="recipe-section" open>
         <summary>
           <div>
-            <div class="section-title">Bowls, Salads & Grain Mains</div>
+            <div class="section-title">Bowls, Salads &amp; Grain Mains</div>
             <div class="section-tagline">
               Rice, grains, roasted veg and sauces — the “big bowl and a spoon” meals.
             </div>
@@ -451,16 +433,17 @@
           <div class="section-index">
             <h3>In this section</h3>
             <ul>
-              <!-- Add more list items as you add cards -->
               <li><a href="#thai-inspired-coconut-rice-veggie-bowls">Thai-Inspired Coconut Rice Veggie Bowls</a></li>
-              <!--
-              <li><a href="#roasted-mushroom-greens-umami-bowls">Roasted Mushroom & Greens Umami Bowls</a></li>
-              <li><a href="#sushi-style-crispy-tofu-rice-bowls">Sushi-Style Crispy Tofu Rice Bowls</a></li>
-              -->
+              <li><a href="#roasted-miso-mushroom-brown-rice-bowls">Roasted Miso Mushroom Brown Rice Bowls</a></li>
+              <li><a href="#crispy-tofu-sushi-bowl">Crispy Tofu Sushi Bowls</a></li>
+              <li><a href="#chipotle-sweet-potato-black-bean-bowl">Chipotle Sweet Potato &amp; Black Bean Bowls</a></li>
+              <li><a href="#lemon-herb-quinoa-greek-bowl">Lemon Herb Quinoa Greek Bowls</a></li>
+              <li><a href="#peanut-ginger-noodle-bowl">Peanut-Ginger Rice Noodle Bowls</a></li>
+              <li><a href="#winter-roasted-veggie-tahini-bowl">Winter Roasted Veggie Tahini Bowls</a></li>
             </ul>
           </div>
 
-          <!-- RECIPE CARD: THAI-INSPIRED COCONUT RICE VEGGIE BOWLS -->
+          <!-- 1. THAI-INSPIRED COCONUT RICE VEGGIE BOWLS -->
           <article class="recipe-card" id="thai-inspired-coconut-rice-veggie-bowls">
             <h2 class="recipe-title">Thai-Inspired Coconut Rice Veggie Bowls</h2>
             <p class="recipe-tagline">
@@ -478,7 +461,6 @@
             </div>
 
             <div class="recipe-columns">
-              <!-- INGREDIENTS -->
               <section class="ingredients">
                 <h4>Ingredients</h4>
 
@@ -508,7 +490,6 @@
                 </ul>
               </section>
 
-              <!-- METHOD -->
               <section class="method">
                 <h4>Method</h4>
                 <ol>
@@ -569,25 +550,410 @@
             </details>
           </article>
 
-          <!--
-            TO ADD MORE BOWLS:
-            1. Duplicate the <article class="recipe-card">…</article> block above.
-            2. Change the id, title, tagline, ingredients, method, and nutrition.
-            3. Add the new recipe to the list in .section-index so it shows up in the mini index.
-          -->
+          <!-- 2. ROASTED MISO MUSHROOM BROWN RICE BOWLS -->
+          <article class="recipe-card" id="roasted-miso-mushroom-brown-rice-bowls">
+            <h2 class="recipe-title">Roasted Miso Mushroom Brown Rice Bowls</h2>
+            <p class="recipe-tagline">Deep umami mushrooms, garlicky greens, and nutty brown rice.</p>
+            <p class="recipe-meta">Serves 4 · Prep 15 min · Cook 30 min</p>
+
+            <div class="recipe-badges">
+              <span class="recipe-badge">Gluten-Free</span>
+              <span class="recipe-badge">Vegetarian</span>
+              <span class="recipe-badge">High umami</span>
+              <span class="recipe-badge">Meal-prep approved</span>
+            </div>
+
+            <div class="recipe-columns">
+              <section class="ingredients">
+                <h4>Ingredients</h4>
+
+                <h5>Roasted miso mushrooms</h5>
+                <ul>
+                  <li>500 g cremini or mixed mushrooms, quartered</li>
+                  <li>2 tbsp white miso paste</li>
+                  <li>1 tbsp tamari</li>
+                  <li>1 tbsp maple syrup</li>
+                  <li>1 tbsp sesame oil</li>
+                  <li>2 cloves garlic, grated</li>
+                </ul>
+
+                <h5>Greens</h5>
+                <ul>
+                  <li>4 cups chopped kale or Swiss chard</li>
+                  <li>1 tbsp olive oil</li>
+                  <li>1 clove garlic, minced</li>
+                  <li>Pinch of salt</li>
+                </ul>
+
+                <h5>Base</h5>
+                <ul>
+                  <li>2 cups cooked brown rice</li>
+                  <li>2 green onions, sliced</li>
+                  <li>Sesame seeds (garnish)</li>
+                </ul>
+              </section>
+
+              <section class="method">
+                <h4>Method</h4>
+                <ol>
+                  <li>Heat oven to 425°F (220°C). Line a sheet pan.</li>
+                  <li>Whisk miso, tamari, maple syrup, sesame oil, and grated garlic. Toss mushrooms in mixture and spread on the pan.</li>
+                  <li>Roast 18–22 minutes until deep golden with caramelized edges.</li>
+                  <li>Sauté greens in olive oil and garlic until softened (3–4 min).</li>
+                  <li>Assemble: brown rice → greens → roasted mushrooms → green onions → sesame seeds.</li>
+                </ol>
+              </section>
+            </div>
+
+            <details class="nutrition" open>
+              <summary>Nutrition &amp; usage <span class="section-chevron">▼</span></summary>
+              <div class="nutrition-inner">
+                <p><strong>Per bowl (approx.):</strong></p>
+                <ul>
+                  <li>Protein: 14–17 g</li>
+                  <li>Carbs: 55–65 g</li>
+                  <li>Fat: 10–14 g</li>
+                  <li>Fibre: 6–8 g</li>
+                </ul>
+
+                <p><strong>Usage:</strong></p>
+                <ul>
+                  <li>Excellent with a jammy egg on top.</li>
+                  <li>Add chili crisp for heat.</li>
+                  <li>Keeps well in meal prep all week.</li>
+                </ul>
+              </div>
+            </details>
+          </article>
+
+          <!-- 3. CRISPY TOFU SUSHI BOWLS -->
+          <article class="recipe-card" id="crispy-tofu-sushi-bowl">
+            <h2 class="recipe-title">Crispy Tofu Sushi Bowls</h2>
+            <p class="recipe-tagline">All the best parts of sushi, none of the rolling.</p>
+            <p class="recipe-meta">Serves 4 · Prep 20 min · Cook 20 min</p>
+
+            <div class="recipe-badges">
+              <span class="recipe-badge">Gluten-Free</span>
+              <span class="recipe-badge">Vegetarian</span>
+              <span class="recipe-badge">Crispy tofu</span>
+              <span class="recipe-badge">High protein</span>
+            </div>
+
+            <div class="recipe-columns">
+              <section class="ingredients">
+                <h4>Ingredients</h4>
+
+                <h5>Tofu</h5>
+                <ul>
+                  <li>400 g extra-firm tofu, pressed and cubed</li>
+                  <li>1 tbsp cornstarch</li>
+                  <li>1 tbsp tamari</li>
+                  <li>1 tbsp neutral oil</li>
+                </ul>
+
+                <h5>Rice &amp; toppings</h5>
+                <ul>
+                  <li>2 cups cooked sushi rice</li>
+                  <li>1 cucumber, diced</li>
+                  <li>1 avocado, sliced</li>
+                  <li>1 carrot, shredded</li>
+                  <li>1 sheet nori, cut into strips</li>
+                  <li>Pickled ginger</li>
+                </ul>
+
+                <h5>Drizzle</h5>
+                <ul>
+                  <li>2 tbsp mayo (or vegan mayo)</li>
+                  <li>1 tsp sriracha</li>
+                  <li>1 tsp lime juice</li>
+                </ul>
+              </section>
+
+              <section class="method">
+                <h4>Method</h4>
+                <ol>
+                  <li>Toss tofu with cornstarch, tamari, and oil. Air-fry or oven-roast at 425°F for 20 minutes until crisp.</li>
+                  <li>Whisk drizzle ingredients.</li>
+                  <li>Assemble the bowls: rice → tofu → veg → nori.</li>
+                  <li>Finish with the spicy mayo drizzle.</li>
+                </ol>
+              </section>
+            </div>
+
+            <details class="nutrition" open>
+              <summary>Nutrition &amp; usage <span class="section-chevron">▼</span></summary>
+              <div class="nutrition-inner">
+                <ul>
+                  <li>Great cold-lunch option.</li>
+                  <li>Easily boosted with edamame for more protein.</li>
+                  <li>Use seasoned rice vinegar on rice for true sushi flavour.</li>
+                </ul>
+              </div>
+            </details>
+          </article>
+
+          <!-- 4. CHIPOTLE SWEET POTATO & BLACK BEAN BOWLS -->
+          <article class="recipe-card" id="chipotle-sweet-potato-black-bean-bowl">
+            <h2 class="recipe-title">Chipotle Sweet Potato &amp; Black Bean Bowls</h2>
+            <p class="recipe-tagline">Smoky, sweet, spicy, fresh — the perfect balanced bowl.</p>
+            <p class="recipe-meta">Serves 4 · 30 minutes</p>
+
+            <div class="recipe-badges">
+              <span class="recipe-badge">Gluten-Free</span>
+              <span class="recipe-badge">Vegetarian</span>
+              <span class="recipe-badge">High fibre</span>
+              <span class="recipe-badge">Meal prep</span>
+            </div>
+
+            <div class="recipe-columns">
+              <section class="ingredients">
+                <h4>Ingredients</h4>
+
+                <h5>Sweet potatoes</h5>
+                <ul>
+                  <li>2 medium sweet potatoes, cubed</li>
+                  <li>2 tsp chipotle in adobo, minced</li>
+                  <li>1 tbsp olive oil</li>
+                  <li>Salt</li>
+                </ul>
+
+                <h5>Black beans</h5>
+                <ul>
+                  <li>1 can black beans, drained and rinsed</li>
+                  <li>1 tsp ground cumin</li>
+                  <li>1 tsp smoked paprika</li>
+                </ul>
+
+                <h5>Fresh toppings</h5>
+                <ul>
+                  <li>1 avocado, sliced</li>
+                  <li>1 cup corn kernels (fresh or frozen)</li>
+                  <li>Fresh cilantro, chopped</li>
+                  <li>Lime wedges</li>
+                </ul>
+
+                <h5>Base</h5>
+                <ul>
+                  <li>Cooked rice or quinoa</li>
+                </ul>
+              </section>
+
+              <section class="method">
+                <h4>Method</h4>
+                <ol>
+                  <li>Heat oven to 425°F (220°C). Toss sweet potatoes with chipotle, olive oil, and salt. Roast on a sheet pan for 25 minutes until browned and tender.</li>
+                  <li>Warm black beans in a small pan with cumin and smoked paprika, stirring until fragrant.</li>
+                  <li>Assemble bowls: base grain → black beans → sweet potato → avocado → corn → cilantro.</li>
+                  <li>Serve with lime wedges for squeezing over the top.</li>
+                </ol>
+              </section>
+            </div>
+
+            <details class="nutrition" open>
+              <summary>Nutrition &amp; usage <span class="section-chevron">▼</span></summary>
+              <div class="nutrition-inner">
+                <ul>
+                  <li>High-fibre, very filling lunch or dinner.</li>
+                  <li>Optional extras: salsa verde, crumbled feta (if not fully vegan).</li>
+                </ul>
+              </div>
+            </details>
+          </article>
+
+          <!-- 5. LEMON HERB QUINOA GREEK BOWLS -->
+          <article class="recipe-card" id="lemon-herb-quinoa-greek-bowl">
+            <h2 class="recipe-title">Lemon Herb Quinoa Greek Bowls</h2>
+            <p class="recipe-tagline">Bright, clean, high-protein quinoa with Mediterranean toppings.</p>
+            <p class="recipe-meta">Serves 4 · 25 minutes</p>
+
+            <div class="recipe-badges">
+              <span class="recipe-badge">Gluten-Free</span>
+              <span class="recipe-badge">Vegetarian</span>
+              <span class="recipe-badge">Fresh &amp; bright</span>
+            </div>
+
+            <div class="recipe-columns">
+              <section class="ingredients">
+                <h4>Ingredients</h4>
+
+                <h5>Quinoa</h5>
+                <ul>
+                  <li>1½ cups quinoa, rinsed</li>
+                  <li>Zest of 1 lemon</li>
+                  <li>2 tbsp lemon juice</li>
+                  <li>1 tbsp olive oil</li>
+                  <li>½ tsp salt (or to taste)</li>
+                </ul>
+
+                <h5>Toppings</h5>
+                <ul>
+                  <li>1 cup cherry tomatoes, halved</li>
+                  <li>1 cucumber, chopped</li>
+                  <li>½ red onion, thinly sliced</li>
+                  <li>¼ cup fresh parsley, chopped</li>
+                  <li>½ cup crumbled feta (optional)</li>
+                </ul>
+
+                <h5>Dressing</h5>
+                <ul>
+                  <li>3 tbsp olive oil</li>
+                  <li>1 tbsp red wine vinegar</li>
+                  <li>1 tsp dried oregano</li>
+                  <li>1 clove garlic, grated</li>
+                  <li>Pinch of salt and pepper</li>
+                </ul>
+              </section>
+
+              <section class="method">
+                <h4>Method</h4>
+                <ol>
+                  <li>Cook quinoa according to package directions. While still warm, stir in lemon zest, lemon juice, olive oil, and salt.</li>
+                  <li>Whisk dressing ingredients until emulsified.</li>
+                  <li>Assemble bowls: quinoa → tomatoes → cucumber → red onion → parsley → feta.</li>
+                  <li>Drizzle with dressing just before serving.</li>
+                </ol>
+              </section>
+            </div>
+
+            <details class="nutrition" open>
+              <summary>Nutrition &amp; usage <span class="section-chevron">▼</span></summary>
+              <div class="nutrition-inner">
+                <ul>
+                  <li>Light but filling; great warm or room temperature.</li>
+                  <li>Add chickpeas for extra protein and fibre.</li>
+                </ul>
+              </div>
+            </details>
+          </article>
+
+          <!-- 6. PEANUT-GINGER RICE NOODLE BOWLS -->
+          <article class="recipe-card" id="peanut-ginger-noodle-bowl">
+            <h2 class="recipe-title">Peanut-Ginger Rice Noodle Bowls</h2>
+            <p class="recipe-tagline">Creamy, spicy, sweet, savoury — the perfect noodle bowl.</p>
+            <p class="recipe-meta">Serves 4 · 20 minutes</p>
+
+            <div class="recipe-badges">
+              <span class="recipe-badge">Gluten-Free</span>
+              <span class="recipe-badge">Vegetarian</span>
+              <span class="recipe-badge">High flavour</span>
+            </div>
+
+            <div class="recipe-columns">
+              <section class="ingredients">
+                <h4>Ingredients</h4>
+
+                <h5>Sauce</h5>
+                <ul>
+                  <li>3 tbsp peanut butter</li>
+                  <li>1½ tbsp tamari</li>
+                  <li>1 tbsp lime juice</li>
+                  <li>1 tbsp maple syrup</li>
+                  <li>1 tsp grated fresh ginger</li>
+                  <li>Water, to thin as needed</li>
+                </ul>
+
+                <h5>Noodles &amp; veg</h5>
+                <ul>
+                  <li>250 g rice noodles</li>
+                  <li>1 red pepper, thinly sliced</li>
+                  <li>1 cup shredded carrots</li>
+                  <li>1 cup shredded cabbage</li>
+                  <li>2 green onions, sliced</li>
+                  <li>¼ cup peanuts, crushed</li>
+                </ul>
+              </section>
+
+              <section class="method">
+                <h4>Method</h4>
+                <ol>
+                  <li>Whisk sauce ingredients together, adding water gradually until smooth and pourable.</li>
+                  <li>Cook rice noodles according to package instructions. Rinse briefly in cold water to prevent sticking.</li>
+                  <li>Assemble: noodles → veg → sauce → green onions → crushed peanuts.</li>
+                  <li>Serve immediately, or keep sauce separate for meal prep to avoid soggy noodles.</li>
+                </ol>
+              </section>
+            </div>
+
+            <details class="nutrition" open>
+              <summary>Nutrition &amp; usage <span class="section-chevron">▼</span></summary>
+              <div class="nutrition-inner">
+                <ul>
+                  <li>Very popular meal-prep option.</li>
+                  <li>Add crispy tofu or edamame for more protein.</li>
+                </ul>
+              </div>
+            </details>
+          </article>
+
+          <!-- 7. WINTER ROASTED VEGGIE TAHINI BOWLS -->
+          <article class="recipe-card" id="winter-roasted-veggie-tahini-bowl">
+            <h2 class="recipe-title">Winter Roasted Veggie Tahini Bowls</h2>
+            <p class="recipe-tagline">Creamy, nutty tahini over caramelized cold-weather vegetables.</p>
+            <p class="recipe-meta">Serves 4 · 35–40 minutes</p>
+
+            <div class="recipe-badges">
+              <span class="recipe-badge">Gluten-Free</span>
+              <span class="recipe-badge">Vegetarian</span>
+              <span class="recipe-badge">Comforting</span>
+            </div>
+
+            <div class="recipe-columns">
+              <section class="ingredients">
+                <h4>Ingredients</h4>
+
+                <h5>Roasted veg</h5>
+                <ul>
+                  <li>2 cups cubed winter squash (butternut, kabocha, etc.)</li>
+                  <li>1 cup cauliflower florets</li>
+                  <li>1 red onion, cut into wedges</li>
+                  <li>2 tbsp olive oil</li>
+                  <li>Salt and pepper</li>
+                </ul>
+
+                <h5>Tahini drizzle</h5>
+                <ul>
+                  <li>3 tbsp tahini</li>
+                  <li>1 tbsp lemon juice</li>
+                  <li>1 tsp maple syrup</li>
+                  <li>1 small garlic clove, grated</li>
+                  <li>Water, as needed to loosen</li>
+                </ul>
+
+                <h5>Base</h5>
+                <ul>
+                  <li>Cooked quinoa or rice</li>
+                  <li>2 tbsp fresh parsley, chopped</li>
+                  <li>Optional: 1 can chickpeas, drained and rinsed</li>
+                </ul>
+              </section>
+
+              <section class="method">
+                <h4>Method</h4>
+                <ol>
+                  <li>Heat oven to 425°F (220°C). Toss squash, cauliflower, and red onion with olive oil, salt, and pepper. Spread on a sheet pan and roast 30 minutes, stirring once, until browned and tender.</li>
+                  <li>Whisk tahini, lemon juice, maple syrup, and garlic. Thin with water until smooth and drizzleable.</li>
+                  <li>If using chickpeas, you can toss them onto the pan for the last 10 minutes of roasting to crisp slightly.</li>
+                  <li>Assemble bowls: grain → roasted veg (and chickpeas, if using) → tahini drizzle → parsley.</li>
+                </ol>
+              </section>
+            </div>
+
+            <details class="nutrition" open>
+              <summary>Nutrition &amp; usage <span class="section-chevron">▼</span></summary>
+              <div class="nutrition-inner">
+                <ul>
+                  <li>Perfect cold-weather bowl; very satisfying.</li>
+                  <li>Chickpeas add protein and make it more meal-prep friendly.</li>
+                </ul>
+              </div>
+            </details>
+          </article>
 
         </div>
       </details>
 
-      <!-- You can copy the <details class="recipe-section"> block above for:
-           - Soups & Stews
-           - Pastas
-           - Hearty Mains
-           - Snacks & Sides
-           - Breads & Flatbreads
-           - Sauces
-           - Desserts
-      -->
+      <!-- Future sections (Soups, Pastas, etc.) go here in the same pattern -->
+
     </main>
 
     <footer>
@@ -599,8 +965,7 @@
         <a class="back-to-top" href="#top">Back to top ↑</a>
       </div>
       <div>
-        Hearty Gluten-Free Vegetarian Cookbook · All recipes GF &amp; vegetarian ·
-        Built to be expanded over time.
+        Hearty Gluten-Free Vegetarian Cookbook · All recipes GF &amp; vegetarian · Built to be expanded over time.
       </div>
     </footer>
 
