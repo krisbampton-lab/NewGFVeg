@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hearty Gluten-Free Vegetarian Comfort Food</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    :root {
+      --bg-main: #f4f8f2;
+      --bg-card: #ffffff;
+      --bg-card-alt: #f0f5ec;
+      --accent: #2e7d32;
+      --accent-dark: #1b5e20;
+      --accent-soft: #c8e6c9;
+      --text-main: #222222;
+      --text-muted: #555555;
+      --border-soft: #d4e2d1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent-dark);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Layout */
+
+    .page-shell {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 1.25rem 1rem 3rem;
+    }
+
+    header {
+      padding: 1.5rem 1.25rem 1rem;
+      margin: 0 -1.25rem 1rem;
+      background: linear-gradient(135deg, #e8f5e9, #f9fff8);
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    header h1 {
+      margin: 0 0 0.35rem;
+      font-size: 1.9rem;
+      color: var(--accent-dark);
+      letter-spacing: 0.03em;
+    }
+
+    header p {
+      margin: 0.1rem 0;
+      color: var(--text-muted);
+      font-size: 0.98rem;
+    }
+
+    .badges-row {
+      margin-top: 0.6rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      font-size: 0.78rem;
+    }
+
+    .badge-pill {
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      font-weight: 500;
+      border: 1px solid #b3d8b4;
+    }
+
+    /* Top nav */
+
+    nav.top-nav {
+      margin-top: 1.25rem;
+      padding: 0.55rem 0.75rem;
+      background: #ffffffaa;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      backdrop-filter: blur(4px);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+    }
+
+    nav.top-nav span.label {
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-right: 0.25rem;
+    }
+
+    nav.top-nav a {
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background: #f5faf4;
+      border: 1px solid transparent;
+      white-space: nowrap;
+    }
+
+    nav.top-nav a:hover {
+      border-color: var(--accent-soft);
+      background: #eaf6e7;
+    }
+
+    /* Sections */
+
+    main {
+      margin-top: 1.25rem;
+    }
+
+    .intro-block {
+      margin-bottom: 1.75rem;
+      padding: 1rem 1.1rem;
+      background: #ffffff;
+      border-radius: 0.75rem;
+      border: 1px solid var(--border-soft);
+      font-size: 0.95rem;
+    }
+
+    .intro-block h2 {
+      margin-top: 0;
+      color: var(--accent-dark);
+      font-size: 1.15rem;
+    }
+
+    /* Collapsible Sections (no JS, just <details>) */
+
+    .recipe-section {
+      margin-bottom: 1.75rem;
+      border-radius: 0.85rem;
+      border: 1px solid var(--border-soft);
+      background: #ffffff;
+      overflow: hidden;
+    }
+
+    .recipe-section + .recipe-section {
+      margin-top: 1.5rem;
+    }
+
+    .recipe-section summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 0.85rem 1rem;
+      background: #e9f5e7;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .recipe-section summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .section-title {
+      font-weight: 650;
+      color: var(--accent-dark);
+      font-size: 1.05rem;
+    }
+
+    .section-tagline {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-top: 0.1rem;
+    }
+
+    .section-chevron {
+      font-size: 0.9rem;
+      color: var(--accent-dark);
+    }
+
+    .section-inner {
+      padding: 0.8rem 1rem 1rem;
+      background: var(--bg-card);
+    }
+
+    /* Recipe index inside each section */
+
+    .section-index {
+      margin: 0 0 0.75rem;
+      padding: 0.6rem 0.75rem;
+      background: var(--bg-card-alt);
+      border-radius: 0.6rem;
+      border: 1px solid var(--border-soft);
+      font-size: 0.88rem;
+    }
+
+    .section-index h3 {
+      margin: 0 0 0.35rem;
+      font-size: 0.9rem;
+      color: var(--accent-dark);
+    }
+
+    .section-index ul {
+      margin: 0.1rem 0 0;
+      padding-left: 1.05rem;
+    }
+
+    .section-index li {
+      margin: 0.15rem 0;
+    }
+
+    /* Recipe cards */
+
+    .recipe-card {
+      margin-top: 1rem;
+      padding: 1rem 0.9rem;
+      border-radius: 0.75rem;
+      border: 1px solid var(--border-soft);
+      background: #ffffff;
+    }
+
+    .recipe-card + .recipe-card {
+      margin-top: 1rem;
+    }
+
+    .recipe-title {
+      margin: 0 0 0.2rem;
+      font-size: 1.05rem;
+      color: var(--accent-dark);
+    }
+
+    .recipe-tagline {
+      margin: 0 0 0.35rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .recipe-meta {
+      margin: 0;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .recipe-badges {
+      margin-top: 0.45rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+    }
+
+    .recipe-badge {
+      font-size: 0.75rem;
+      padding: 0.12rem 0.45rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent-soft);
+      background: #f3faf3;
+      color: var(--accent-dark);
+      font-weight: 500;
+    }
+
+    /* Ingredients + method layout */
+
+    .recipe-columns {
+      margin-top: 0.75rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.1fr);
+      gap: 1.25rem;
+    }
+
+    @media (max-width: 720px) {
+      .recipe-columns {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        padding-inline: 1rem;
+      }
+
+      .page-shell {
+        padding-inline: 0.85rem;
+      }
+    }
+
+    .recipe-columns h4 {
+      margin-top: 0;
+      margin-bottom: 0.4rem;
+      font-size: 0.95rem;
+      color: var(--accent-dark);
+      border-bottom: 1px solid #e0eee0;
+      padding-bottom: 0.25rem;
+    }
+
+    .recipe-columns h5 {
+      margin: 0.55rem 0 0.15rem;
+      font-size: 0.86rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+    }
+
+    .ingredients ul,
+    .ingredients ol {
+      margin: 0.1rem 0 0.35rem;
+      padding-left: 1.05rem;
+      font-size: 0.9rem;
+    }
+
+    .method ol {
+      margin: 0.25rem 0 0.35rem;
+      padding-left: 1.15rem;
+      font-size: 0.9rem;
+    }
+
+    .method li + li {
+      margin-top: 0.25rem;
+    }
+
+    /* Nutrition / usage details */
+
+    .nutrition {
+      margin-top: 0.7rem;
+      border-radius: 0.6rem;
+      background: var(--bg-card-alt);
+      border: 1px solid var(--border-soft);
+      padding: 0.45rem 0.7rem 0.65rem;
+      font-size: 0.85rem;
+    }
+
+    .nutrition summary {
+      cursor: pointer;
+      list-style: none;
+      font-weight: 550;
+      color: var(--accent-dark);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nutrition summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .nutrition-inner {
+      margin-top: 0.4rem;
+    }
+
+    .nutrition-inner p {
+      margin: 0.15rem 0;
+    }
+
+    .nutrition-inner ul {
+      margin: 0.3rem 0 0.1rem;
+      padding-left: 1rem;
+    }
+
+    /* Footer */
+
+    footer {
+      margin-top: 2.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border-soft);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    footer .footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 0.8rem;
+    }
+
+    .back-to-top {
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+
+    <header>
+      <h1>Hearty Gluten-Free Vegetarian Comfort Food</h1>
+      <p>Soups, bowls, mains, and sides that are actually filling — all gluten-free, all vegetarian.</p>
+      <p>Built for meal prep, mixed-diet households, and people who want “proper food”, not sad side salads.</p>
+
+      <div class="badges-row">
+        <span class="badge-pill">100% Gluten-Free</span>
+        <span class="badge-pill">Vegetarian & Easily Vegan</span>
+        <span class="badge-pill">Meal-Prep Friendly</span>
+      </div>
+
+      <nav class="top-nav">
+        <span class="label">Jump to:</span>
+        <a href="#index">Index</a>
+        <a href="#bowls">Bowls, Salads & Grain Mains</a>
+        <!-- Add more as you grow: soups, pastas, mains, etc. -->
+      </nav>
+    </header>
+
+    <main>
+      <!-- INTRO / HOW TO USE -->
+      <section id="index" class="intro-block">
+        <h2>How this cookbook works</h2>
+        <p>
+          This is a growing collection of hearty gluten-free vegetarian recipes. Most are built to be:
+          big-bowl friendly, good for leftovers, and easy to tweak for mixed-diet households.
+        </p>
+        <p>
+          Each recipe follows the same layout:
+        </p>
+        <ul>
+          <li><strong>Quick overview</strong> — serves, time, and what kind of meal it is.</li>
+          <li><strong>Ingredients split into logical blocks</strong> — base, toppings, dressings, etc.</li>
+          <li><strong>Clear method steps</strong> — written so you can actually cook from your phone or tablet.</li>
+          <li><strong>Nutrition & usage notes</strong> — macro-ish snapshot and how to use it for meal prep.</li>
+        </ul>
+      </section>
+
+      <!-- BOWLS SECTION (EXAMPLE) -->
+      <details id="bowls" class="recipe-section" open>
+        <summary>
+          <div>
+            <div class="section-title">Bowls, Salads & Grain Mains</div>
+            <div class="section-tagline">
+              Rice, grains, roasted veg and sauces — the “big bowl and a spoon” meals.
+            </div>
+          </div>
+          <span class="section-chevron">▼</span>
+        </summary>
+
+        <div class="section-inner">
+          <div class="section-index">
+            <h3>In this section</h3>
+            <ul>
+              <!-- Add more list items as you add cards -->
+              <li><a href="#thai-inspired-coconut-rice-veggie-bowls">Thai-Inspired Coconut Rice Veggie Bowls</a></li>
+              <!--
+              <li><a href="#roasted-mushroom-greens-umami-bowls">Roasted Mushroom & Greens Umami Bowls</a></li>
+              <li><a href="#sushi-style-crispy-tofu-rice-bowls">Sushi-Style Crispy Tofu Rice Bowls</a></li>
+              -->
+            </ul>
+          </div>
+
+          <!-- RECIPE CARD: THAI-INSPIRED COCONUT RICE VEGGIE BOWLS -->
+          <article class="recipe-card" id="thai-inspired-coconut-rice-veggie-bowls">
+            <h2 class="recipe-title">Thai-Inspired Coconut Rice Veggie Bowls</h2>
+            <p class="recipe-tagline">
+              Coconut rice with crunchy veg, peanuts, and a lime-chili drizzle.
+            </p>
+            <p class="recipe-meta">
+              Serves 4 · Prep: 20 min · Cook: 20 min
+            </p>
+
+            <div class="recipe-badges">
+              <span class="recipe-badge">Gluten-Free</span>
+              <span class="recipe-badge">Vegetarian</span>
+              <span class="recipe-badge">Coconut rice</span>
+              <span class="recipe-badge">Meal-prep OK</span>
+            </div>
+
+            <div class="recipe-columns">
+              <!-- INGREDIENTS -->
+              <section class="ingredients">
+                <h4>Ingredients</h4>
+
+                <h5>Coconut rice</h5>
+                <ul>
+                  <li>1½ cups jasmine rice, rinsed</li>
+                  <li>1 can (400 ml) coconut milk</li>
+                  <li>1 cup water</li>
+                  <li>½ tsp salt</li>
+                </ul>
+
+                <h5>Veg &amp; toppings</h5>
+                <ul>
+                  <li>1 cup shredded carrot</li>
+                  <li>1 cup shredded cabbage</li>
+                  <li>1 red pepper, thinly sliced</li>
+                  <li>½ cup roasted peanuts, roughly chopped</li>
+                  <li>Fresh cilantro, chopped</li>
+                </ul>
+
+                <h5>Lime-chili drizzle</h5>
+                <ul>
+                  <li>3 tbsp lime juice</li>
+                  <li>2 tbsp tamari (GF soy sauce)</li>
+                  <li>1 tbsp maple syrup</li>
+                  <li>1 tsp chili-garlic sauce or sriracha</li>
+                </ul>
+              </section>
+
+              <!-- METHOD -->
+              <section class="method">
+                <h4>Method</h4>
+                <ol>
+                  <li>
+                    In a medium pot, combine the jasmine rice, coconut milk, water, and salt.
+                    Bring to a boil, then reduce heat to low, cover, and simmer for
+                    12–15 minutes until the rice is tender and the liquid is absorbed.
+                    Remove from heat and let stand, covered, for 5 minutes, then fluff with a fork.
+                  </li>
+                  <li>
+                    While the rice cooks, whisk together all lime-chili drizzle ingredients in a small bowl:
+                    lime juice, tamari, maple syrup, and chili-garlic sauce or sriracha. Taste and tweak
+                    sweetness, salt, or heat as you like.
+                  </li>
+                  <li>
+                    Prep the veg and toppings: shred the carrot and cabbage, thinly slice the red pepper,
+                    roughly chop the peanuts, and chop the cilantro.
+                  </li>
+                  <li>
+                    Build the bowls: spoon a generous portion of coconut rice into each bowl.
+                    Top with carrot, cabbage, red pepper, peanuts, and cilantro.
+                  </li>
+                  <li>
+                    Drizzle each bowl with the lime-chili sauce right before serving.
+                    Serve extra drizzle on the side for anyone who wants more.
+                  </li>
+                </ol>
+              </section>
+            </div>
+
+            <details class="nutrition" open>
+              <summary>
+                Nutrition &amp; usage
+                <span class="section-chevron">▼</span>
+              </summary>
+              <div class="nutrition-inner">
+                <p><strong>Per bowl (approx.):</strong></p>
+                <ul>
+                  <li>Protein ≈ 12–16 g</li>
+                  <li>Carbs ≈ 60–70 g</li>
+                  <li>Fats ≈ 18–22 g</li>
+                  <li>Fibre ≈ 6–8 g</li>
+                </ul>
+                <p><strong>How to use it:</strong></p>
+                <ul>
+                  <li>Great base to pair with any of your curry recipes.</li>
+                  <li>For extra protein, add crispy tofu, edamame, or a soft-boiled egg on top.</li>
+                  <li>
+                    Mixed-diet tweak: non-veg person can add grilled shrimp, chicken satay,
+                    or leftover roast meat to their bowl only; base stays fully veg and GF.
+                  </li>
+                  <li>
+                    Meal prep: coconut rice will firm up in the fridge — reheat with a splash
+                    of water or extra coconut milk to loosen.
+                  </li>
+                </ul>
+              </div>
+            </details>
+          </article>
+
+          <!--
+            TO ADD MORE BOWLS:
+            1. Duplicate the <article class="recipe-card">…</article> block above.
+            2. Change the id, title, tagline, ingredients, method, and nutrition.
+            3. Add the new recipe to the list in .section-index so it shows up in the mini index.
+          -->
+
+        </div>
+      </details>
+
+      <!-- You can copy the <details class="recipe-section"> block above for:
+           - Soups & Stews
+           - Pastas
+           - Hearty Mains
+           - Snacks & Sides
+           - Breads & Flatbreads
+           - Sauces
+           - Desserts
+      -->
+    </main>
+
+    <footer>
+      <div class="footer-top">
+        <div class="footer-links">
+          <a href="#index">Recipe index</a>
+          <a href="#bowls">Bowls section</a>
+        </div>
+        <a class="back-to-top" href="#top">Back to top ↑</a>
+      </div>
+      <div>
+        Hearty Gluten-Free Vegetarian Cookbook · All recipes GF &amp; vegetarian ·
+        Built to be expanded over time.
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>
