@@ -1,1 +1,1500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hearty Gluten-Free Vegetarian Comfort Food</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg-main: #f4f8f2;
+      --bg-card: #ffffff;
+      --bg-card-alt: #f0f5ec;
+      --accent: #2e7d32;
+      --accent-dark: #1b5e20;
+      --accent-soft: #c8e6c9;
+      --text-main: #222222;
+      --text-muted: #555555;
+      --border-soft: #d4e2d1;
+    }
 
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent-dark);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page-shell {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 1.25rem 1rem 3rem;
+    }
+
+    header {
+      padding: 1.5rem 1.25rem 1rem;
+      margin: 0 -1.25rem 1rem;
+      background: linear-gradient(135deg, #e8f5e9, #f9fff8);
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    header h1 {
+      margin: 0 0 0.35rem;
+      font-size: 1.9rem;
+      color: var(--accent-dark);
+      letter-spacing: 0.03em;
+    }
+
+    header p {
+      margin: 0.1rem 0;
+      color: var(--text-muted);
+      font-size: 0.98rem;
+    }
+
+    .badges-row {
+      margin-top: 0.6rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      font-size: 0.78rem;
+    }
+
+    .badge-pill {
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      font-weight: 500;
+      border: 1px solid #b3d8b4;
+    }
+
+    nav.top-nav {
+      margin-top: 1.25rem;
+      padding: 0.55rem 0.75rem;
+      background: #ffffffaa;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      backdrop-filter: blur(4px);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+    }
+
+    nav.top-nav span.label {
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-right: 0.25rem;
+    }
+
+    nav.top-nav a {
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background: #f5faf4;
+      border: 1px solid transparent;
+      white-space: nowrap;
+    }
+
+    nav.top-nav a:hover {
+      border-color: var(--accent-soft);
+      background: #eaf6e7;
+    }
+
+    main {
+      margin-top: 1.25rem;
+    }
+
+    .intro-block {
+      margin-bottom: 1.75rem;
+      padding: 1rem 1.1rem;
+      background: #ffffff;
+      border-radius: 0.75rem;
+      border: 1px solid var(--border-soft);
+      font-size: 0.95rem;
+    }
+
+    .intro-block h2 {
+      margin-top: 0;
+      color: var(--accent-dark);
+      font-size: 1.15rem;
+    }
+
+    .recipe-section {
+      margin-bottom: 1.75rem;
+      border-radius: 0.85rem;
+      border: 1px solid var(--border-soft);
+      background: #ffffff;
+      overflow: hidden;
+    }
+
+    .recipe-section + .recipe-section {
+      margin-top: 1.5rem;
+    }
+
+    .recipe-section summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 0.85rem 1rem;
+      background: #e9f5e7;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .recipe-section summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .section-title {
+      font-weight: 650;
+      color: var(--accent-dark);
+      font-size: 1.05rem;
+    }
+
+    .section-tagline {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-top: 0.1rem;
+    }
+
+    .section-chevron {
+      font-size: 0.9rem;
+      color: var(--accent-dark);
+    }
+
+    .section-inner {
+      padding: 0.8rem 1rem 1rem;
+      background: var(--bg-card);
+    }
+
+    .section-index {
+      margin: 0 0 0.75rem;
+      padding: 0.6rem 0.75rem;
+      background: var(--bg-card-alt);
+      border-radius: 0.6rem;
+      border: 1px solid var(--border-soft);
+      font-size: 0.88rem;
+    }
+
+    .section-index h3 {
+      margin: 0 0 0.35rem;
+      font-size: 0.9rem;
+      color: var(--accent-dark);
+    }
+
+    .section-index ul {
+      margin: 0.1rem 0 0;
+      padding-left: 1.05rem;
+    }
+
+    .section-index li {
+      margin: 0.15rem 0;
+    }
+
+    .recipe-card {
+      margin-top: 1rem;
+      padding: 1rem 0.9rem;
+      border-radius: 0.75rem;
+      border: 1px solid var(--border-soft);
+      background: #ffffff;
+    }
+
+    .recipe-card + .recipe-card {
+      margin-top: 1rem;
+    }
+
+    .recipe-title {
+      margin: 0 0 0.2rem;
+      font-size: 1.05rem;
+      color: var(--accent-dark);
+    }
+
+    .recipe-tagline {
+      margin: 0 0 0.35rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .recipe-meta {
+      margin: 0;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .recipe-badges {
+      margin-top: 0.45rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+    }
+
+    .recipe-badge {
+      font-size: 0.75rem;
+      padding: 0.12rem 0.45rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent-soft);
+      background: #f3faf3;
+      color: var(--accent-dark);
+      font-weight: 500;
+    }
+
+    .recipe-columns {
+      margin-top: 0.75rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.1fr);
+      gap: 1.25rem;
+    }
+
+    @media (max-width: 720px) {
+      .recipe-columns {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        padding-inline: 1rem;
+      }
+
+      .page-shell {
+        padding-inline: 0.85rem;
+      }
+    }
+
+    .recipe-columns h4 {
+      margin-top: 0;
+      margin-bottom: 0.4rem;
+      font-size: 0.95rem;
+      color: var(--accent-dark);
+      border-bottom: 1px solid #e0eee0;
+      padding-bottom: 0.25rem;
+    }
+
+    .recipe-columns h5 {
+      margin: 0.55rem 0 0.15rem;
+      font-size: 0.86rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+    }
+
+    .ingredients ul,
+    .ingredients ol {
+      margin: 0.1rem 0 0.35rem;
+      padding-left: 1.05rem;
+      font-size: 0.9rem;
+    }
+
+    .method ol {
+      margin: 0.25rem 0 0.35rem;
+      padding-left: 1.15rem;
+      font-size: 0.9rem;
+    }
+
+    .method li + li {
+      margin-top: 0.25rem;
+    }
+
+    .nutrition {
+      margin-top: 0.7rem;
+      border-radius: 0.6rem;
+      background: var(--bg-card-alt);
+      border: 1px solid var(--border-soft);
+      padding: 0.45rem 0.7rem 0.65rem;
+      font-size: 0.85rem;
+    }
+
+    .nutrition summary {
+      cursor: pointer;
+      list-style: none;
+      font-weight: 550;
+      color: var(--accent-dark);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nutrition summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .nutrition-inner {
+      margin-top: 0.4rem;
+    }
+
+    .nutrition-inner p {
+      margin: 0.15rem 0;
+    }
+
+    .nutrition-inner ul {
+      margin: 0.3rem 0 0.1rem;
+      padding-left: 1rem;
+    }
+
+    footer {
+      margin-top: 2.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border-soft);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    footer .footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 0.8rem;
+    }
+
+    .back-to-top {
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div id="top"></div>
+  <div class="page-shell">
+
+    <header>
+      <h1>Hearty Gluten-Free Vegetarian Comfort Food</h1>
+      <p>Soups, bowls, mains, and sides that are actually filling — all gluten-free, all vegetarian.</p>
+      <p>Built for meal prep, mixed-diet households, and people who want “proper food”, not sad side salads.</p>
+
+      <div class="badges-row">
+        <span class="badge-pill">100% Gluten-Free</span>
+        <span class="badge-pill">Vegetarian &amp; Easily Vegan</span>
+        <span class="badge-pill">Meal-Prep Friendly</span>
+      </div>
+
+      <nav class="top-nav">
+        <span class="label">Jump to:</span>
+        <a href="#index">Index</a>
+        <a href="#bowls">Bowls, Salads &amp; Grain Mains</a>
+        <a href="#soups-and-stews">Soups &amp; Stews</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="index" class="intro-block">
+        <h2>How this cookbook works</h2>
+        <p>
+          This is a growing collection of hearty gluten-free vegetarian recipes. Most are built to be:
+          big-bowl friendly, good for leftovers, and easy to tweak for mixed-diet households.
+        </p>
+        <p>
+          Each recipe follows the same layout:
+        </p>
+        <ul>
+          <li><strong>Quick overview</strong> — serves, time, and what kind of meal it is.</li>
+          <li><strong>Ingredients split into logical blocks</strong> — base, toppings, dressings, etc.</li>
+          <li><strong>Clear method steps</strong> — written so you can actually cook from your phone or tablet.</li>
+          <li><strong>Nutrition &amp; usage notes</strong> — macro-ish snapshot and how to use it for meal prep.</li>
+        </ul>
+      </section>
+
+      <!-- ===================== BOWLS SECTION ===================== -->
+      <details id="bowls" class="recipe-section" open>
+        <summary>
+          <div>
+            <div class="section-title">Bowls, Salads &amp; Grain Mains</div>
+            <div class="section-tagline">
+              Rice, grains, roasted veg and sauces — the “big bowl and a spoon” meals.
+            </div>
+          </div>
+          <span class="section-chevron">▼</span>
+        </summary>
+
+        <div class="section-inner">
+          <div class="section-index">
+            <h3>In this section</h3>
+            <ul>
+              <li><a href="#thai-inspired-coconut-rice-veggie-bowls">Thai-Inspired Coconut Rice Veggie Bowls</a></li>
+              <li><a href="#roasted-miso-mushroom-brown-rice-bowls">Roasted Miso Mushroom Brown Rice Bowls</a></li>
+              <li><a href="#crispy-tofu-sushi-bowl">Crispy Tofu Sushi Bowls</a></li>
+              <li><a href="#chipotle-sweet-potato-black-bean-bowl">Chipotle Sweet Potato &amp; Black Bean Bowls</a></li>
+              <li><a href="#lemon-herb-quinoa-greek-bowl">Lemon Herb Quinoa Greek Bowls</a></li>
+              <li><a href="#peanut-ginger-noodle-bowl">Peanut-Ginger Rice Noodle Bowls</a></li>
+              <li><a href="#winter-roasted-veggie-tahini-bowl">Winter Roasted Veggie Tahini Bowls</a></li>
+            </ul>
+          </div>
+
+          <!-- 1. THAI-INSPIRED COCONUT RICE VEGGIE BOWLS -->
+          <article class="recipe-card" id="thai-inspired-coconut-rice-veggie-bowls">
+            <h2 class="recipe-title">Thai-Inspired Coconut Rice Veggie Bowls</h2>
+            <p class="recipe-tagline">
+              Coconut rice with crunchy veg, peanuts, and a lime-chili drizzle.
+            </p>
+            <p class="recipe-meta">
+              Serves 4 · Prep: 20 min · Cook: 20 min
+            </p>
+
+            <div class="recipe-badges">
+              <span class="recipe-badge">Gluten-Free</span>
+              <span class="recipe-badge">Vegetarian</span>
+              <span class="recipe-badge">Coconut rice</span>
+              <span class="recipe-badge">Meal-prep OK</span>
+            </div>
+
+            <div class="recipe-columns">
+              <section class="ingredients">
+                <h4>Ingredients</h4>
+
+                <h5>Coconut rice</h5>
+                <ul>
+                  <li>1½ cups jasmine rice, rinsed</li>
+                  <li>1 can (400 ml) coconut milk</li>
+                  <li>1 cup water</li>
+                  <li>½ tsp salt</li>
+                </ul>
+
+                <h5>Veg &amp; toppings</h5>
+                <ul>
+                  <li>1 cup shredded carrot</li>
+                  <li>1 cup shredded cabbage</li>
+                  <li>1 red pepper, thinly sliced</li>
+                  <li>½ cup roasted peanuts, roughly chopped</li>
+                  <li>Fresh cilantro, chopped</li>
+                </ul>
+
+                <h5>Lime-chili drizzle</h5>
+                <ul>
+                  <li>3 tbsp lime juice</li>
+                  <li>2 tbsp tamari (GF soy sauce)</li>
+                  <li>1 tbsp maple syrup</li>
+                  <li>1 tsp chili-garlic sauce or sriracha</li>
+                </ul>
+              </section>
+
+              <section class="method">
+                <h4>Method</h4>
+                <ol>
+                  <li>
+                    In a medium pot, combine the jasmine rice, coconut milk, water, and salt.
+                    Bring to a boil, then reduce heat to low, cover, and simmer for
+                    12–15 minutes until the rice is tender and the liquid is absorbed.
+                    Remove from heat and let stand, covered, for 5 minutes, then fluff with a fork.
+                  </li>
+                  <li>
+                    While the rice cooks, whisk together all lime-chili drizzle ingredients in a small bowl:
+                    lime juice, tamari, maple syrup, and chili-garlic sauce or sriracha. Taste and tweak
+                    sweetness, salt, or heat as you like.
+                  </li>
+                  <li>
+                    Prep the veg and toppings: shred the carrot and cabbage, thinly slice the red pepper,
+                    roughly chop the peanuts, and chop the cilantro.
+                  </li>
+                  <li>
+                    Build the bowls: spoon a generous portion of coconut rice into each bowl.
+                    Top with carrot, cabbage, red pepper, peanuts, and cilantro.
+                  </li>
+                  <li>
+                    Drizzle each bowl with the lime-chili sauce right before serving.
+                    Serve extra drizzle on the side for anyone who wants more.
+                  </li>
+                </ol>
+              </section>
+            </div>
+
+            <details class="nutrition" open>
+              <summary>
+                Nutrition &amp; usage
+                <span class="section-chevron">▼</span>
+              </summary>
+              <div class="nutrition-inner">
+                <div
+                  class="nutrition-macros"
+                  data-protein="13"
+                  data-carbs="68"
+                  data-fat="20"
+                  data-fibre="6">
+                </div>
+                <p><strong>How to use it:</strong></p>
+                <ul>
+                  <li>Great base to pair with any of your curry recipes.</li>
+                  <li>For extra protein, add crispy tofu, edamame, or a soft-boiled egg on top.</li>
+                  <li>
+                    Mixed-diet tweak: non-veg person can add grilled shrimp, chicken satay,
+                    or leftover roast meat to their bowl only; base stays fully veg and GF.
+                  </li>
+                  <li>
+                    Meal prep: coconut rice will firm up in the fridge — reheat with a splash
+                    of water or extra coconut milk to loosen.
+                  </li>
+                </ul>
+              </div>
+            </details>
+          </article>
+
+          <!-- 2. ROASTED MISO MUSHROOM BROWN RICE BOWLS -->
+          <article class="recipe-card" id="roasted-miso-mushroom-brown-rice-bowls">
+            <h2 class="recipe-title">Roasted Miso Mushroom Brown Rice Bowls</h2>
+            <p class="recipe-tagline">Deep umami mushrooms, garlicky greens, and nutty brown rice.</p>
+            <p class="recipe-meta">Serves 4 · Prep 15 min · Cook 30 min</p>
+
+            <div class="recipe-badges">
+              <span class="recipe-badge">Gluten-Free</span>
+              <span class="recipe-badge">Vegetarian</span>
+              <span class="recipe-badge">High umami</span>
+              <span class="recipe-badge">Meal-prep approved</span>
+            </div>
+
+            <div class="recipe-columns">
+              <section class="ingredients">
+                <h4>Ingredients</h4>
+
+                <h5>Roasted miso mushrooms</h5>
+                <ul>
+                  <li>500 g cremini or mixed mushrooms, quartered</li>
+                  <li>2 tbsp white miso paste</li>
+                  <li>1 tbsp tamari</li>
+                  <li>1 tbsp maple syrup</li>
+                  <li>1 tbsp sesame oil</li>
+                  <li>2 cloves garlic, grated</li>
+                </ul>
+
+                <h5>Greens</h5>
+                <ul>
+                  <li>4 cups chopped kale or Swiss chard</li>
+                  <li>1 tbsp olive oil</li>
+                  <li>1 clove garlic, minced</li>
+                  <li>Pinch of salt</li>
+                </ul>
+
+                <h5>Base</h5>
+                <ul>
+                  <li>2 cups cooked brown rice</li>
+                  <li>2 green onions, sliced</li>
+                  <li>Sesame seeds (garnish)</li>
+                </ul>
+              </section>
+
+              <section class="method">
+                <h4>Method</h4>
+                <ol>
+                  <li>Heat oven to 425°F (220°C). Line a sheet pan.</li>
+                  <li>Whisk miso, tamari, maple syrup, sesame oil, and grated garlic. Toss mushrooms in mixture and spread on the pan.</li>
+                  <li>Roast 18–22 minutes until deep golden with caramelized edges.</li>
+                  <li>Sauté greens in olive oil and garlic until softened (3–4 min).</li>
+                  <li>Assemble: brown rice → greens → roasted mushrooms → green onions → sesame seeds.</li>
+                </ol>
+              </section>
+            </div>
+
+            <details class="nutrition" open>
+              <summary>Nutrition &amp; usage <span class="section-chevron">▼</span></summary>
+              <div class="nutrition-inner">
+                <div
+                  class="nutrition-macros"
+                  data-protein="14"
+                  data-carbs="55"
+                  data-fat="12"
+                  data-fibre="7">
+                </div>
+                <p><strong>How to use it:</strong></p>
+                <ul>
+                  <li>Excellent with a jammy egg on top.</li>
+                  <li>Add chili crisp for heat.</li>
+                  <li>Keeps well in meal prep all week.</li>
+                </ul>
+              </div>
+            </details>
+          </article>
+
+          <!-- 3. CRISPY TOFU SUSHI BOWLS -->
+          <article class="recipe-card" id="crispy-tofu-sushi-bowl">
+            <h2 class="recipe-title">Crispy Tofu Sushi Bowls</h2>
+            <p class="recipe-tagline">All the best parts of sushi, none of the rolling.</p>
+            <p class="recipe-meta">Serves 4 · Prep 20 min · Cook 20 min</p>
+
+            <div class="recipe-badges">
+              <span class="recipe-badge">Gluten-Free</span>
+              <span class="recipe-badge">Vegetarian</span>
+              <span class="recipe-badge">Crispy tofu</span>
+              <span class="recipe-badge">High protein</span>
+            </div>
+
+            <div class="recipe-columns">
+              <section class="ingredients">
+                <h4>Ingredients</h4>
+
+                <h5>Tofu</h5>
+                <ul>
+                  <li>400 g extra-firm tofu, pressed and cubed</li>
+                  <li>1 tbsp cornstarch</li>
+                  <li>1 tbsp tamari</li>
+                  <li>1 tbsp neutral oil</li>
+                </ul>
+
+                <h5>Rice &amp; toppings</h5>
+                <ul>
+                  <li>2 cups cooked sushi rice</li>
+                  <li>1 cucumber, diced</li>
+                  <li>1 avocado, sliced</li>
+                  <li>1 carrot, shredded</li>
+                  <li>1 sheet nori, cut into strips</li>
+                  <li>Pickled ginger</li>
+                </ul>
+
+                <h5>Drizzle</h5>
+                <ul>
+                  <li>2 tbsp mayo (or vegan mayo)</li>
+                  <li>1 tsp sriracha</li>
+                  <li>1 tsp lime juice</li>
+                </ul>
+              </section>
+
+              <section class="method">
+                <h4>Method</h4>
+                <ol>
+                  <li>Toss tofu with cornstarch, tamari, and oil. Air-fry or oven-roast at 425°F for 20 minutes until crisp.</li>
+                  <li>Whisk drizzle ingredients.</li>
+                  <li>Assemble the bowls: rice → tofu → veg → nori.</li>
+                  <li>Finish with the spicy mayo drizzle.</li>
+                </ol>
+              </section>
+            </div>
+
+            <details class="nutrition" open>
+              <summary>Nutrition &amp; usage <span class="section-chevron">▼</span></summary>
+              <div class="nutrition-inner">
+                <div
+                  class="nutrition-macros"
+                  data-protein="19"
+                  data-carbs="52"
+                  data-fat="17"
+                  data-fibre="5">
+                </div>
+                <ul>
+                  <li>Great cold-lunch option.</li>
+                  <li>Easily boosted with edamame for more protein.</li>
+                  <li>Use seasoned rice vinegar on rice for true sushi flavour.</li>
+                </ul>
+              </div>
+            </details>
+          </article>
+
+          <!-- 4. CHIPOTLE SWEET POTATO & BLACK BEAN BOWLS -->
+          <article class="recipe-card" id="chipotle-sweet-potato-black-bean-bowl">
+            <h2 class="recipe-title">Chipotle Sweet Potato &amp; Black Bean Bowls</h2>
+            <p class="recipe-tagline">Smoky, sweet, spicy, fresh — the perfect balanced bowl.</p>
+            <p class="recipe-meta">Serves 4 · 30 minutes</p>
+
+            <div class="recipe-badges">
+              <span class="recipe-badge">Gluten-Free</span>
+              <span class="recipe-badge">Vegetarian</span>
+              <span class="recipe-badge">High fibre</span>
+              <span class="recipe-badge">Meal prep</span>
+            </div>
+
+            <div class="recipe-columns">
+              <section class="ingredients">
+                <h4>Ingredients</h4>
+
+                <h5>Sweet potatoes</h5>
+                <ul>
+                  <li>2 medium sweet potatoes, cubed</li>
+                  <li>2 tsp chipotle in adobo, minced</li>
+                  <li>1 tbsp olive oil</li>
+                  <li>Salt</li>
+                </ul>
+
+                <h5>Black beans</h5>
+                <ul>
+                  <li>1 can black beans, drained and rinsed</li>
+                  <li>1 tsp ground cumin</li>
+                  <li>1 tsp smoked paprika</li>
+                </ul>
+
+                <h5>Fresh toppings</h5>
+                <ul>
+                  <li>1 avocado, sliced</li>
+                  <li>1 cup corn kernels (fresh or frozen)</li>
+                  <li>Fresh cilantro, chopped</li>
+                  <li>Lime wedges</li>
+                </ul>
+
+                <h5>Base</h5>
+                <ul>
+                  <li>Cooked rice or quinoa</li>
+                </ul>
+              </section>
+
+              <section class="method">
+                <h4>Method</h4>
+                <ol>
+                  <li>Heat oven to 425°F (220°C). Toss sweet potatoes with chipotle, olive oil, and salt. Roast on a sheet pan for 25 minutes until browned and tender.</li>
+                  <li>Warm black beans in a small pan with cumin and smoked paprika, stirring until fragrant.</li>
+                  <li>Assemble bowls: base grain → black beans → sweet potato → avocado → corn → cilantro.</li>
+                  <li>Serve with lime wedges for squeezing over the top.</li>
+                </ol>
+              </section>
+            </div>
+
+            <details class="nutrition" open>
+              <summary>Nutrition &amp; usage <span class="section-chevron">▼</span></summary>
+              <div class="nutrition-inner">
+                <div
+                  class="nutrition-macros"
+                  data-protein="13"
+                  data-carbs="60"
+                  data-fat="13"
+                  data-fibre="11">
+                </div>
+                <ul>
+                  <li>High-fibre, very filling lunch or dinner.</li>
+                  <li>Optional extras: salsa verde, crumbled feta (if not fully vegan).</li>
+                </ul>
+              </div>
+            </details>
+          </article>
+
+          <!-- 5. LEMON HERB QUINOA GREEK BOWLS -->
+          <article class="recipe-card" id="lemon-herb-quinoa-greek-bowl">
+            <h2 class="recipe-title">Lemon Herb Quinoa Greek Bowls</h2>
+            <p class="recipe-tagline">Bright, clean, high-protein quinoa with Mediterranean toppings.</p>
+            <p class="recipe-meta">Serves 4 · 25 minutes</p>
+
+            <div class="recipe-badges">
+              <span class="recipe-badge">Gluten-Free</span>
+              <span class="recipe-badge">Vegetarian</span>
+              <span class="recipe-badge">Fresh &amp; bright</span>
+            </div>
+
+            <div class="recipe-columns">
+              <section class="ingredients">
+                <h4>Ingredients</h4>
+
+                <h5>Quinoa</h5>
+                <ul>
+                  <li>1½ cups quinoa, rinsed</li>
+                  <li>Zest of 1 lemon</li>
+                  <li>2 tbsp lemon juice</li>
+                  <li>1 tbsp olive oil</li>
+                  <li>½ tsp salt (or to taste)</li>
+                </ul>
+
+                <h5>Toppings</h5>
+                <ul>
+                  <li>1 cup cherry tomatoes, halved</li>
+                  <li>1 cucumber, chopped</li>
+                  <li>½ red onion, thinly sliced</li>
+                  <li>¼ cup fresh parsley, chopped</li>
+                  <li>½ cup crumbled feta (optional)</li>
+                </ul>
+
+                <h5>Dressing</h5>
+                <ul>
+                  <li>3 tbsp olive oil</li>
+                  <li>1 tbsp red wine vinegar</li>
+                  <li>1 tsp dried oregano</li>
+                  <li>1 clove garlic, grated</li>
+                  <li>Pinch of salt and pepper</li>
+                </ul>
+              </section>
+
+              <section class="method">
+                <h4>Method</h4>
+                <ol>
+                  <li>Cook quinoa according to package directions. While still warm, stir in lemon zest, lemon juice, olive oil, and salt.</li>
+                  <li>Whisk dressing ingredients until emulsified.</li>
+                  <li>Assemble bowls: quinoa → tomatoes → cucumber → red onion → parsley → feta.</li>
+                  <li>Drizzle with dressing just before serving.</li>
+                </ol>
+              </section>
+            </div>
+
+            <details class="nutrition" open>
+              <summary>Nutrition &amp; usage <span class="section-chevron">▼</span></summary>
+              <div class="nutrition-inner">
+                <div
+                  class="nutrition-macros"
+                  data-protein="12"
+                  data-carbs="48"
+                  data-fat="14"
+                  data-fibre="6">
+                </div>
+                <ul>
+                  <li>Light but filling; great warm or room temperature.</li>
+                  <li>Add chickpeas for extra protein and fibre.</li>
+                </ul>
+              </div>
+            </details>
+          </article>
+
+          <!-- 6. PEANUT-GINGER RICE NOODLE BOWLS -->
+          <article class="recipe-card" id="peanut-ginger-noodle-bowl">
+            <h2 class="recipe-title">Peanut-Ginger Rice Noodle Bowls</h2>
+            <p class="recipe-tagline">Creamy, spicy, sweet, savoury — the perfect noodle bowl.</p>
+            <p class="recipe-meta">Serves 4 · 20 minutes</p>
+
+            <div class="recipe-badges">
+              <span class="recipe-badge">Gluten-Free</span>
+              <span class="recipe-badge">Vegetarian</span>
+              <span class="recipe-badge">High flavour</span>
+            </div>
+
+            <div class="recipe-columns">
+              <section class="ingredients">
+                <h4>Ingredients</h4>
+
+                <h5>Sauce</h5>
+                <ul>
+                  <li>3 tbsp peanut butter</li>
+                  <li>1½ tbsp tamari</li>
+                  <li>1 tbsp lime juice</li>
+                  <li>1 tbsp maple syrup</li>
+                  <li>1 tsp grated fresh ginger</li>
+                  <li>Water, to thin as needed</li>
+                </ul>
+
+                <h5>Noodles &amp; veg</h5>
+                <ul>
+                  <li>250 g rice noodles</li>
+                  <li>1 red pepper, thinly sliced</li>
+                  <li>1 cup shredded carrots</li>
+                  <li>1 cup shredded cabbage</li>
+                  <li>2 green onions, sliced</li>
+                  <li>¼ cup peanuts, crushed</li>
+                </ul>
+              </section>
+
+              <section class="method">
+                <h4>Method</h4>
+                <ol>
+                  <li>Whisk sauce ingredients together, adding water gradually until smooth and pourable.</li>
+                  <li>Cook rice noodles according to package instructions. Rinse briefly in cold water to prevent sticking.</li>
+                  <li>Assemble: noodles → veg → sauce → green onions → crushed peanuts.</li>
+                  <li>Serve immediately, or keep sauce separate for meal prep to avoid soggy noodles.</li>
+                </ol>
+              </section>
+            </div>
+
+            <details class="nutrition" open>
+              <summary>Nutrition &amp; usage <span class="section-chevron">▼</span></summary>
+              <div class="nutrition-inner">
+                <div
+                  class="nutrition-macros"
+                  data-protein="11"
+                  data-carbs="60"
+                  data-fat="18"
+                  data-fibre="5">
+                </div>
+                <ul>
+                  <li>Very popular meal-prep option.</li>
+                  <li>Add crispy tofu or edamame for more protein.</li>
+                </ul>
+              </div>
+            </details>
+          </article>
+
+          <!-- 7. WINTER ROASTED VEGGIE TAHINI BOWLS -->
+          <article class="recipe-card" id="winter-roasted-veggie-tahini-bowl">
+            <h2 class="recipe-title">Winter Roasted Veggie Tahini Bowls</h2>
+            <p class="recipe-tagline">Creamy, nutty tahini over caramelized cold-weather vegetables.</p>
+            <p class="recipe-meta">Serves 4 · 35–40 minutes</p>
+
+            <div class="recipe-badges">
+              <span class="recipe-badge">Gluten-Free</span>
+              <span class="recipe-badge">Vegetarian</span>
+              <span class="recipe-badge">Comforting</span>
+            </div>
+
+            <div class="recipe-columns">
+              <section class="ingredients">
+                <h4>Ingredients</h4>
+
+                <h5>Roasted veg</h5>
+                <ul>
+                  <li>2 cups cubed winter squash (butternut, kabocha, etc.)</li>
+                  <li>1 cup cauliflower florets</li>
+                  <li>1 red onion, cut into wedges</li>
+                  <li>2 tbsp olive oil</li>
+                  <li>Salt and pepper</li>
+                </ul>
+
+                <h5>Tahini drizzle</h5>
+                <ul>
+                  <li>3 tbsp tahini</li>
+                  <li>1 tbsp lemon juice</li>
+                  <li>1 tsp maple syrup</li>
+                  <li>1 small garlic clove, grated</li>
+                  <li>Water, as needed to loosen</li>
+                </ul>
+
+                <h5>Base</h5>
+                <ul>
+                  <li>Cooked quinoa or rice</li>
+                  <li>2 tbsp fresh parsley, chopped</li>
+                  <li>Optional: 1 can chickpeas, drained and rinsed</li>
+                </ul>
+              </section>
+
+              <section class="method">
+                <h4>Method</h4>
+                <ol>
+                  <li>Heat oven to 425°F (220°C). Toss squash, cauliflower, and red onion with olive oil, salt, and pepper. Spread on a sheet pan and roast 30 minutes, stirring once, until browned and tender.</li>
+                  <li>Whisk tahini, lemon juice, maple syrup, and garlic. Thin with water until smooth and drizzleable.</li>
+                  <li>If using chickpeas, you can toss them onto the pan for the last 10 minutes of roasting to crisp slightly.</li>
+                  <li>Assemble bowls: grain → roasted veg (and chickpeas, if using) → tahini drizzle → parsley.</li>
+                </ol>
+              </section>
+            </div>
+
+            <details class="nutrition" open>
+              <summary>Nutrition &amp; usage <span class="section-chevron">▼</span></summary>
+              <div class="nutrition-inner">
+                <div
+                  class="nutrition-macros"
+                  data-protein="12"
+                  data-carbs="50"
+                  data-fat="17"
+                  data-fibre="9">
+                </div>
+                <ul>
+                  <li>Perfect cold-weather bowl; very satisfying.</li>
+                  <li>Chickpeas add protein and make it more meal-prep friendly.</li>
+                </ul>
+              </div>
+            </details>
+          </article>
+
+        </div>
+      </details>
+
+      <!-- ===========================================================
+           SOUPS & STEWS SECTION (WITH NUTRITION MACROS)
+      ============================================================ -->
+
+      <details id="soups-and-stews" class="recipe-section" open>
+        <summary>
+          <div>
+            <div class="section-title">Soups &amp; Stews</div>
+            <div class="section-tagline">Hearty, filling, gluten-free, vegetarian soups built like meals.</div>
+          </div>
+          <span class="section-chevron">▼</span>
+        </summary>
+
+        <div class="section-inner">
+
+          <div class="section-index">
+            <h3>In this section</h3>
+            <ul>
+              <li><a href="#golden-lentil-coconut-stew">Golden Lentil Coconut Stew</a></li>
+              <li><a href="#hearty-potato-chowder">Hearty Potato &amp; Corn Chowder</a></li>
+              <li><a href="#mushroom-barley-style-soup">Umami Mushroom “Barley” Soup (GF)</a></li>
+              <li><a href="#tuscan-white-bean-soup">Tuscan White Bean &amp; Kale Soup</a></li>
+              <li><a href="#spicy-peanut-noodle-soup">Spicy Peanut Noodle Soup</a></li>
+              <li><a href="#roasted-tomato-basil-soup">Roasted Tomato Basil Soup</a></li>
+            </ul>
+          </div>
+
+          <!-- 1. GOLDEN LENTIL COCONUT STEW -->
+          <article class="recipe-card" id="golden-lentil-coconut-stew">
+            <h2 class="recipe-title">Golden Lentil Coconut Stew</h2>
+            <p class="recipe-tagline">Rich, creamy, turmeric-spiced lentils with a hint of lime.</p>
+            <p class="recipe-meta">Serves 4–5 · 35 minutes</p>
+
+            <div class="recipe-badges">
+              <span class="recipe-badge">Gluten-Free</span>
+              <span class="recipe-badge">High protein</span>
+              <span class="recipe-badge">Comfort</span>
+            </div>
+
+            <div class="recipe-columns">
+              <section class="ingredients">
+                <h4>Ingredients</h4>
+
+                <h5>Base</h5>
+                <ul>
+                  <li>1 cup red lentils, rinsed</li>
+                  <li>1 onion, diced</li>
+                  <li>3 cloves garlic, minced</li>
+                  <li>1 tbsp grated ginger</li>
+                  <li>1 tbsp olive oil</li>
+                </ul>
+
+                <h5>Broth</h5>
+                <ul>
+                  <li>1 tsp turmeric</li>
+                  <li>1 tsp ground cumin</li>
+                  <li>½ tsp paprika</li>
+                  <li>1 can (400 ml) coconut milk</li>
+                  <li>3 cups vegetable broth</li>
+                  <li>1 tbsp lime juice</li>
+                  <li>Salt to taste</li>
+                </ul>
+
+                <h5>Toppings</h5>
+                <ul>
+                  <li>Fresh cilantro, chopped</li>
+                  <li>Chili flakes (optional)</li>
+                </ul>
+              </section>
+
+              <section class="method">
+                <h4>Method</h4>
+                <ol>
+                  <li>Sauté onion, garlic, and ginger in olive oil over medium heat until softened, 4–5 minutes.</li>
+                  <li>Stir in turmeric, cumin, and paprika; cook 30 seconds until fragrant.</li>
+                  <li>Add lentils, coconut milk, and vegetable broth. Bring to a gentle simmer.</li>
+                  <li>Simmer 18–22 minutes, stirring occasionally, until lentils are soft and stew is thickened.</li>
+                  <li>Stir in lime juice and adjust salt to taste. Thin with a splash of water or broth if too thick.</li>
+                  <li>Serve hot, topped with cilantro and chili flakes.</li>
+                </ol>
+              </section>
+            </div>
+
+            <details class="nutrition" open>
+              <summary>Nutrition &amp; usage <span class="section-chevron">▼</span></summary>
+              <div class="nutrition-inner">
+                <div
+                  class="nutrition-macros"
+                  data-protein="14"
+                  data-carbs="35"
+                  data-fat="15"
+                  data-fibre="7">
+                </div>
+                <p><strong>How to use it:</strong></p>
+                <ul>
+                  <li>Very filling on its own; also great over rice.</li>
+                  <li>Add spinach in the last 5 minutes for extra greens.</li>
+                  <li>Good for 3–4 days in the fridge; thickens as it sits.</li>
+                </ul>
+              </div>
+            </details>
+          </article>
+
+          <!-- 2. HEARTY POTATO & CORN CHOWDER -->
+          <article class="recipe-card" id="hearty-potato-chowder">
+            <h2 class="recipe-title">Hearty Potato &amp; Corn Chowder</h2>
+            <p class="recipe-tagline">Creamy, cozy, smoky flavour without meat.</p>
+            <p class="recipe-meta">Serves 4 · 30 minutes</p>
+
+            <div class="recipe-badges">
+              <span class="recipe-badge">Gluten-Free</span>
+              <span class="recipe-badge">Vegetarian</span>
+              <span class="recipe-badge">Comfort food</span>
+            </div>
+
+            <div class="recipe-columns">
+              <section class="ingredients">
+                <h4>Ingredients</h4>
+
+                <h5>Base</h5>
+                <ul>
+                  <li>3 medium potatoes, diced small</li>
+                  <li>1 cup corn kernels (fresh or frozen)</li>
+                  <li>1 carrot, diced</li>
+                  <li>1 celery stalk, diced</li>
+                  <li>1 small onion, diced</li>
+                  <li>1 tbsp olive oil or butter</li>
+                </ul>
+
+                <h5>Broth</h5>
+                <ul>
+                  <li>3 cups vegetable broth</li>
+                  <li>1 cup milk or unsweetened coconut milk</li>
+                  <li>½ tsp smoked paprika</li>
+                  <li>½ tsp dried thyme</li>
+                  <li>Salt &amp; black pepper</li>
+                </ul>
+
+                <h5>Finish</h5>
+                <ul>
+                  <li>2 green onions, sliced</li>
+                  <li>Shredded cheddar (optional, not vegan)</li>
+                </ul>
+              </section>
+
+              <section class="method">
+                <h4>Method</h4>
+                <ol>
+                  <li>In a pot, sauté onion, carrot, and celery in oil over medium heat until softened, about 5 minutes.</li>
+                  <li>Add potatoes, corn, vegetable broth, smoked paprika, thyme, and a pinch of salt. Bring to a simmer.</li>
+                  <li>Simmer 12–15 minutes until potatoes are very tender.</li>
+                  <li>Stir in milk. Use a potato masher to roughly mash some of the potatoes in the pot to thicken the chowder.</li>
+                  <li>Simmer another 3–5 minutes; adjust seasoning with salt and pepper.</li>
+                  <li>Serve topped with green onions and cheddar, if using.</li>
+                </ol>
+              </section>
+            </div>
+
+            <details class="nutrition" open>
+              <summary>Nutrition &amp; usage <span class="section-chevron">▼</span></summary>
+              <div class="nutrition-inner">
+                <div
+                  class="nutrition-macros"
+                  data-protein="9"
+                  data-carbs="45"
+                  data-fat="10"
+                  data-fibre="5">
+                </div>
+                <p><strong>How to use it:</strong></p>
+                <ul>
+                  <li>Serious “comfort” energy; serve with a simple green salad.</li>
+                  <li>Use smoked paprika generously for a “bacon-y” note without meat.</li>
+                </ul>
+              </div>
+            </details>
+          </article>
+
+          <!-- 3. UMAMI MUSHROOM “BARLEY” SOUP (GF) -->
+          <article class="recipe-card" id="mushroom-barley-style-soup">
+            <h2 class="recipe-title">Umami Mushroom “Barley” Soup (GF)</h2>
+            <p class="recipe-tagline">Classic barley soup flavour, recreated with gluten-free grains.</p>
+            <p class="recipe-meta">Serves 4 · 40 minutes</p>
+
+            <div class="recipe-badges">
+              <span class="recipe-badge">Gluten-Free</span>
+              <span class="recipe-badge">Deep umami</span>
+              <span class="recipe-badge">Vegetarian</span>
+            </div>
+
+            <div class="recipe-columns">
+              <section class="ingredients">
+                <h4>Ingredients</h4>
+
+                <h5>Base</h5>
+                <ul>
+                  <li>1 cup short-grain brown rice or sorghum (rinsed)</li>
+                  <li>400 g mixed mushrooms, sliced</li>
+                  <li>1 onion, diced</li>
+                  <li>1 carrot, diced</li>
+                  <li>1 celery stalk, diced</li>
+                </ul>
+
+                <h5>Broth</h5>
+                <ul>
+                  <li>4 cups vegetable broth</li>
+                  <li>1 tbsp tamari (GF soy sauce)</li>
+                  <li>½ tsp dried thyme</li>
+                  <li>½ tsp black pepper</li>
+                  <li>Salt to taste</li>
+                </ul>
+
+                <h5>Aromatics</h5>
+                <ul>
+                  <li>2 cloves garlic, minced</li>
+                  <li>1 tbsp olive oil</li>
+                </ul>
+              </section>
+
+              <section class="method">
+                <h4>Method</h4>
+                <ol>
+                  <li>In a large pot, sauté mushrooms over medium-high heat (dry or with a splash of oil) until deeply browned and they’ve released most of their moisture.</li>
+                  <li>Add olive oil, onion, carrot, celery, and garlic. Cook 4–5 minutes until softened.</li>
+                  <li>Stir in brown rice, vegetable broth, tamari, thyme, and pepper. Bring to a simmer.</li>
+                  <li>Simmer 25–30 minutes, stirring occasionally, until rice is tender. Add a splash more water if it gets too thick.</li>
+                  <li>Adjust salt to taste before serving.</li>
+                </ol>
+              </section>
+            </div>
+
+            <details class="nutrition" open>
+              <summary>Nutrition &amp; usage <span class="section-chevron">▼</span></summary>
+              <div class="nutrition-inner">
+                <div
+                  class="nutrition-macros"
+                  data-protein="7"
+                  data-carbs="30"
+                  data-fat="6"
+                  data-fibre="3">
+                </div>
+                <p><strong>How to use it:</strong></p>
+                <ul>
+                  <li>Deep, savoury “meaty” flavour without any meat.</li>
+                  <li>Good base soup to pair with a sandwich or big salad.</li>
+                </ul>
+              </div>
+            </details>
+          </article>
+
+          <!-- 4. TUSCAN WHITE BEAN & KALE SOUP -->
+          <article class="recipe-card" id="tuscan-white-bean-soup">
+            <h2 class="recipe-title">Tuscan White Bean &amp; Kale Soup</h2>
+            <p class="recipe-tagline">Savory, herby, rustic Italian-style bean soup.</p>
+            <p class="recipe-meta">Serves 4 · 30 minutes</p>
+
+            <div class="recipe-badges">
+              <span class="recipe-badge">High protein</span>
+              <span class="recipe-badge">Gluten-Free</span>
+              <span class="recipe-badge">Vegetarian</span>
+            </div>
+
+            <div class="recipe-columns">
+              <section class="ingredients">
+                <h4>Ingredients</h4>
+
+                <h5>Base</h5>
+                <ul>
+                  <li>2 cans cannellini or navy beans, drained and rinsed</li>
+                  <li>1 onion, diced</li>
+                  <li>2 carrots, sliced</li>
+                  <li>1 celery stalk, diced</li>
+                  <li>2 cups chopped kale (stems removed)</li>
+                  <li>1 tbsp olive oil</li>
+                </ul>
+
+                <h5>Broth</h5>
+                <ul>
+                  <li>4 cups vegetable broth</li>
+                  <li>1 tsp dried oregano</li>
+                  <li>½ tsp dried rosemary (crushed between fingers)</li>
+                  <li>Salt &amp; black pepper</li>
+                </ul>
+
+                <h5>Finish</h5>
+                <ul>
+                  <li>1 tbsp lemon juice</li>
+                  <li>Grated Parmesan (optional, not vegan)</li>
+                </ul>
+              </section>
+
+              <section class="method">
+                <h4>Method</h4>
+                <ol>
+                  <li>Sauté onion, carrot, and celery in olive oil over medium heat until softened, 5–6 minutes.</li>
+                  <li>Add beans, vegetable broth, oregano, rosemary, and a pinch of salt. Bring to a gentle simmer.</li>
+                  <li>Simmer 10–12 minutes so flavours meld.</li>
+                  <li>Stir in kale and cook 3–5 minutes until tender but bright.</li>
+                  <li>Finish with lemon juice, then adjust salt and pepper.</li>
+                  <li>Serve with Parmesan on top if using.</li>
+                </ol>
+              </section>
+            </div>
+
+            <details class="nutrition" open>
+              <summary>Nutrition &amp; usage <span class="section-chevron">▼</span></summary>
+              <div class="nutrition-inner">
+                <div
+                  class="nutrition-macros"
+                  data-protein="13"
+                  data-carbs="24"
+                  data-fat="4"
+                  data-fibre="8">
+                </div>
+                <p><strong>How to use it:</strong></p>
+                <ul>
+                  <li>High in fibre and protein; good main meal by itself.</li>
+                  <li>Super forgiving for meal prep — reheats very well.</li>
+                </ul>
+              </div>
+            </details>
+          </article>
+
+          <!-- 5. SPICY PEANUT NOODLE SOUP -->
+          <article class="recipe-card" id="spicy-peanut-noodle-soup">
+            <h2 class="recipe-title">Spicy Peanut Noodle Soup</h2>
+            <p class="recipe-tagline">Creamy, spicy broth with rice noodles and greens.</p>
+            <p class="recipe-meta">Serves 4 · 20 minutes</p>
+
+            <div class="recipe-badges">
+              <span class="recipe-badge">Gluten-Free</span>
+              <span class="recipe-badge">High flavour</span>
+              <span class="recipe-badge">Vegetarian</span>
+            </div>
+
+            <div class="recipe-columns">
+              <section class="ingredients">
+                <h4>Ingredients</h4>
+
+                <h5>Broth</h5>
+                <ul>
+                  <li>3 cups vegetable broth</li>
+                  <li>1 cup coconut milk</li>
+                  <li>2 tbsp peanut butter</li>
+                  <li>1 tbsp tamari</li>
+                  <li>1 tbsp lime juice</li>
+                  <li>1–2 tsp chili-garlic sauce (to taste)</li>
+                </ul>
+
+                <h5>Noodles &amp; veg</h5>
+                <ul>
+                  <li>200 g rice noodles</li>
+                  <li>1 red pepper, thinly sliced</li>
+                  <li>1 cup baby spinach</li>
+                  <li>2 green onions, sliced</li>
+                </ul>
+              </section>
+
+              <section class="method">
+                <h4>Method</h4>
+                <ol>
+                  <li>In a pot, whisk together broth, coconut milk, peanut butter, tamari, lime juice, and chili-garlic sauce.</li>
+                  <li>Bring to a gentle simmer, whisking until peanut butter is fully dissolved.</li>
+                  <li>Add rice noodles and red pepper; simmer until noodles are just tender (check package time).</li>
+                  <li>Stir in spinach and cook 1 minute until just wilted.</li>
+                  <li>Serve immediately, topped with green onions.</li>
+                </ol>
+              </section>
+            </div>
+
+            <details class="nutrition" open>
+              <summary>Nutrition &amp; usage <span class="section-chevron">▼</span></summary>
+              <div class="nutrition-inner">
+                <div
+                  class="nutrition-macros"
+                  data-protein="12"
+                  data-carbs="45"
+                  data-fat="22"
+                  data-fibre="4">
+                </div>
+                <p><strong>How to use it:</strong></p>
+                <ul>
+                  <li>Big flavour, fairly energy-dense; a full meal in a bowl.</li>
+                  <li>Add crispy tofu or edamame on top for extra protein.</li>
+                </ul>
+              </div>
+            </details>
+          </article>
+
+          <!-- 6. ROASTED TOMATO BASIL SOUP -->
+          <article class="recipe-card" id="roasted-tomato-basil-soup">
+            <h2 class="recipe-title">Roasted Tomato Basil Soup</h2>
+            <p class="recipe-tagline">Deep roasted tomato flavour with garlic and fresh basil.</p>
+            <p class="recipe-meta">Serves 4 · 40 minutes</p>
+
+            <div class="recipe-badges">
+              <span class="recipe-badge">Gluten-Free</span>
+              <span class="recipe-badge">Vegetarian</span>
+              <span class="recipe-badge">Roasted flavour</span>
+            </div>
+
+            <div class="recipe-columns">
+              <section class="ingredients">
+                <h4>Ingredients</h4>
+
+                <h5>Roast</h5>
+                <ul>
+                  <li>6 large ripe tomatoes, halved</li>
+                  <li>1 small onion, quartered</li>
+                  <li>4 cloves garlic, peeled</li>
+                  <li>2 tbsp olive oil</li>
+                  <li>Salt &amp; black pepper</li>
+                </ul>
+
+                <h5>Blend</h5>
+                <ul>
+                  <li>2 cups vegetable broth</li>
+                  <li>½ cup fresh basil leaves, loosely packed</li>
+                  <li>1 tbsp tomato paste</li>
+                  <li>½ tsp sugar (optional, to balance acidity)</li>
+                </ul>
+              </section>
+
+              <section class="method">
+                <h4>Method</h4>
+                <ol>
+                  <li>Heat oven to 425°F (220°C). Place tomatoes, onion, and garlic on a sheet pan; drizzle with olive oil and season with salt and pepper.</li>
+                  <li>Roast 25–30 minutes until tomatoes are soft and edges are starting to caramelize.</li>
+                  <li>Transfer roasted veg (including juices) to a blender with vegetable broth, basil, tomato paste, and sugar if using. Blend until smooth.</li>
+                  <li>Pour into a pot and simmer 8–10 minutes to deepen the flavour. Adjust salt and pepper.</li>
+                  <li>Serve hot with extra basil on top.</li>
+                </ol>
+              </section>
+            </div>
+
+            <details class="nutrition" open>
+              <summary>Nutrition &amp; usage <span class="section-chevron">▼</span></summary>
+              <div class="nutrition-inner">
+                <div
+                  class="nutrition-macros"
+                  data-protein="4"
+                  data-carbs="20"
+                  data-fat="4"
+                  data-fibre="4">
+                </div>
+                <p><strong>How to use it:</strong></p>
+                <ul>
+                  <li>Light but flavourful; pair with a GF grilled cheese or big salad.</li>
+                  <li>Freezes well for quick future lunches.</li>
+                </ul>
+              </div>
+            </details>
+          </article>
+
+        </div>
+      </details>
+
+    </main>
+
+    <footer>
+      <div class="footer-top">
+        <div class="footer-links">
+          <a href="#index">Recipe index</a>
+          <a href="#bowls">Bowls section</a>
+          <a href="#soups-and-stews">Soups &amp; stews</a>
+        </div>
+        <a class="back-to-top" href="#top">Back to top ↑</a>
+      </div>
+      <div>
+        Hearty Gluten-Free Vegetarian Cookbook · All recipes GF &amp; vegetarian · Built to be expanded over time.
+      </div>
+    </footer>
+
+  </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var boxes = document.querySelectorAll('.nutrition-macros');
+
+  boxes.forEach(function (box) {
+    var protein = parseFloat(box.dataset.protein || '0');
+    var carbs   = parseFloat(box.dataset.carbs   || '0');
+    var fat     = parseFloat(box.dataset.fat     || '0');
+    var fibre   = parseFloat(box.dataset.fibre   || '0');
+
+    // Approx calories from macros
+    // 4 kcal/g for protein & carbs, 9 kcal/g for fat
+    var calories = Math.round(protein * 4 + carbs * 4 + fat * 9);
+
+    var html = '<p><strong>Approx. per serving:</strong></p><ul>';
+
+    if (!isNaN(calories) && calories > 0) {
+      html += '<li>Calories: ' + calories + '</li>';
+    }
+    if (!isNaN(protein) && protein > 0) {
+      html += '<li>Protein: ' + protein + ' g</li>';
+    }
+    if (!isNaN(carbs) && carbs > 0) {
+      html += '<li>Carbs: ' + carbs + ' g</li>';
+    }
+    if (!isNaN(fat) && fat > 0) {
+      html += '<li>Fat: ' + fat + ' g</li>';
+    }
+    if (!isNaN(fibre) && fibre > 0) {
+      html += '<li>Fibre: ' + fibre + ' g</li>';
+    }
+
+    html += '</ul>';
+    box.innerHTML = html;
+  });
+});
+</script>
+</body>
+</html>
