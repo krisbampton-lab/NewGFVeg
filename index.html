@@ -1459,25 +1459,42 @@
 
   </div>
 
-  <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var boxes = document.querySelectorAll('.nutrition-macros');
-    boxes.forEach(function (box) {
-      var protein = box.dataset.protein;
-      var carbs   = box.dataset.carbs;
-      var fat     = box.dataset.fat;
-      var fibre   = box.dataset.fibre;
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var boxes = document.querySelectorAll('.nutrition-macros');
 
-      var html = '<p><strong>Approx. per serving:</strong></p><ul>';
-      if (protein) html += '<li>Protein: ' + protein + ' g</li>';
-      if (carbs)   html += '<li>Carbs: '   + carbs   + ' g</li>';
-      if (fat)     html += '<li>Fat: '     + fat     + ' g</li>';
-      if (fibre)   html += '<li>Fibre: '   + fibre   + ' g</li>';
-      html += '</ul>';
+  boxes.forEach(function (box) {
+    var protein = parseFloat(box.dataset.protein || '0');
+    var carbs   = parseFloat(box.dataset.carbs   || '0');
+    var fat     = parseFloat(box.dataset.fat     || '0');
+    var fibre   = parseFloat(box.dataset.fibre   || '0');
 
-      box.innerHTML = html;
-    });
+    // Approx calories from macros
+    // 4 kcal/g for protein & carbs, 9 kcal/g for fat
+    var calories = Math.round(protein * 4 + carbs * 4 + fat * 9);
+
+    var html = '<p><strong>Approx. per serving:</strong></p><ul>';
+
+    if (!isNaN(calories) && calories > 0) {
+      html += '<li>Calories: ' + calories + '</li>';
+    }
+    if (!isNaN(protein) && protein > 0) {
+      html += '<li>Protein: ' + protein + ' g</li>';
+    }
+    if (!isNaN(carbs) && carbs > 0) {
+      html += '<li>Carbs: ' + carbs + ' g</li>';
+    }
+    if (!isNaN(fat) && fat > 0) {
+      html += '<li>Fat: ' + fat + ' g</li>';
+    }
+    if (!isNaN(fibre) && fibre > 0) {
+      html += '<li>Fibre: ' + fibre + ' g</li>';
+    }
+
+    html += '</ul>';
+    box.innerHTML = html;
   });
-  </script>
+});
+</script>
 </body>
 </html>
